@@ -1,0 +1,67 @@
+
+<style>
+  .panel-root {
+    flex-direction: column;
+    width: 420px;
+    background-color: #101827;
+    padding: 22px;
+    gap: 12px;
+  }
+  .eyebrow {
+    color: #55d6be;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .heading {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .body {
+    color: #d5deeb;
+    font-size: 19px;
+  }
+  .detail {
+    color: #55d6be;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .action {
+    margin-top: 8px;
+  }
+</style>
+
+<Panel class="panel-root">
+  <div class="eyebrow" id="eyebrow">GHOST TRACE // CYBER FORENSICS</div>
+  <div class="heading" id="heading">HOSPITAL NETWORK BREACH</div>
+  <div class="body" id="body">A cyberattack has disrupted the hospital network. Suspicious activity has been detected in the hospital authentication system.</div>
+  <div class="detail" id="detail">MISSION STATUS: NOT STARTED</div>
+
+  <Button id="primary-button" class="action">
+    <ButtonLabel>START INVESTIGATION</ButtonLabel>
+  </Button>
+
+  <Button id="next-button" class="action" style="display: none">
+    <ButtonLabel>CONTINUE</ButtonLabel>
+  </Button>
+
+  <Button id="isolate-button" class="action" style="display: none">
+    <ButtonLabel>ISOLATE COMPROMISED SERVER</ButtonLabel>
+  </Button>
+
+  <Button id="ignore-button" class="action" style="display: none">
+    <ButtonLabel>IGNORE THE ALERT</ButtonLabel>
+  </Button>
+
+  <Button id="restart-button" class="action" style="display: none">
+    <ButtonLabel>RESTART INVESTIGATION</ButtonLabel>
+  </Button>
+
+  <Button id="xr-button" class="action">
+    <ButtonLabel>ENTER XR</ButtonLabel>
+  </Button>
+
+  <Button id="exit-button" class="action" style="display: none">
+    <ButtonLabel>EXIT XR</ButtonLabel>
+  </Button>
+</Panel>

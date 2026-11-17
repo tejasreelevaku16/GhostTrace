@@ -1,0 +1,96 @@
+
+{
+  "version": "iwsdk.scene.v1",
+  "units": "meters",
+  "components": {
+    "com.iwsdk.components.DomeGradient": {
+      "sky": [0.012, 0.025, 0.065, 1],
+      "equator": [0.025, 0.075, 0.12, 1],
+      "ground": [0.015, 0.025, 0.045, 1],
+      "elevationDeg": 24,
+      "azimuthDeg": -31,
+      "dither": true
+    },
+    "com.iwsdk.components.IBLGradient": {
+      "sky": [0.12, 0.2, 0.32, 1],
+      "equator": [0.08, 0.15, 0.23, 1],
+      "ground": [0.025, 0.04, 0.07, 1],
+      "intensity": 0.35
+    }
+  },
+  "environment": {
+    "toneMapping": "aces",
+    "exposure": 0.85,
+    "shadows": true,
+    "shadowMapType": "pcf"
+  },
+  "resources": {},
+  "nodes": [
+    {
+      "id": "studio-floor",
+      "name": "Investigation Floor",
+      "framingRole": "support",
+      "content": {
+        "type": "asset",
+        "asset": "studio-floor",
+        "receiveShadow": true
+      },
+      "components": {
+        "LocomotionEnvironment": {},
+        "DomeFade": {
+          "start": 4,
+          "end": 10
+        }
+      }
+    },
+    {
+      "id": "welcome-panel",
+      "name": "GHOST TRACE Investigation Terminal",
+      "content": {
+        "type": "asset",
+        "asset": "welcome-panel"
+      },
+      "transform": {
+        "position": [0, 1.7, -2.8],
+        "rotationDeg": [-4, 0, 0],
+        "scale": 0.58
+      },
+      "components": {
+        "RayInteractable": {}
+      }
+    },
+    {
+      "id": "key-light",
+      "name": "Cyber Blue Key Light",
+      "transform": {
+        "position": [-2.5, 5, 1.5],
+        "rotationDeg": [-65, -20, 0]
+      },
+      "components": {
+        "DirectionalLight": {
+          "color": [0.35, 0.75, 1, 1],
+          "intensity": 1.2,
+          "castShadow": true,
+          "shadowMapSize": "2048",
+          "shadowCameraSize": 8,
+          "shadowCameraNear": 2,
+          "shadowCameraFar": 24,
+          "shadowRadius": 7,
+          "shadowBias": -0.0004,
+          "shadowNormalBias": 0.02
+        }
+      }
+    },
+    {
+      "id": "fill-light",
+      "name": "Soft Cyan Fill Light",
+      "components": {
+        "HemisphereLight": {
+          "skyColor": [0.12, 0.35, 0.55, 1],
+          "groundColor": [0.025, 0.04, 0.08, 1],
+          "intensity": 0.55
+        }
+      }
+    }
+  ]
+}
